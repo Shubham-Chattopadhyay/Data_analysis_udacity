@@ -1,0 +1,31 @@
+import unicodecsv
+
+enrollments_filename = '/datasets/ud170/udacity-students/enrollments.csv'
+
+## Longer version of code (replaced with shorter, equivalent version below)
+
+# enrollments = []
+# f = open(enrollments_filename, 'rb')
+# reader = unicodecsv.DictReader(f)
+# for row in reader:
+#     enrollments.append(row)
+# f.close()
+
+with open(enrollments_filename, 'rb') as f:
+    reader = unicodecsv.DictReader(f)
+    enrollments = list(reader)
+    
+
+engagement_filename = '/datasets/ud170/udacity-students/daily_engagement.csv'
+submissions_filename = '/datasets/ud170/udacity-students/project_submissions.csv'
+daily_engagement =[]     # Replace this with your code
+with open(engagement_filename, 'rb') as f1:
+    reader1 = unicodecsv.DictReader(f1)
+    daily_engagement = list(reader1)
+    print daily_engagement[0]
+
+project_submissions = []  # Replace this with your code
+with open(submissions_filename, 'rb') as f2:
+    reader2 = unicodecsv.DictReader(f2)
+    project_submissions = list(reader2)
+    print project_submissions[0]
